@@ -10,6 +10,7 @@ class User(models.Model):
 class Place(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField()
+    capacity = models.IntegerField(default=1)
 
     def __str__(self):
         return self.name
