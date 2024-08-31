@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Список місць</title>
+</head>
+<body>
+    <h2>Список місць</h2>
+    <ul>
+        {% for place in places %}
+            <li>
+                <h3>{{ place.name }}</h3>
+                <p>{{ place.description }}</p>
+                <p>Місткість: {{ place.capacity }} осіб</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

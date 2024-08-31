@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Бронювання</title>
+</head>
+<body>
+    <h2>Бронювання</h2>
+    <form action="{% url 'book' %}" method="post">
+        {% csrf_token %}
+        <label for="people">Кількість людей:</label><br>
+        <input type="number" id="people" name="people" min="1" required><br><br>
+        
+        <label for="date_from">Дата з:</label><br>
+        <input type="date" id="date_from" name="date_from" required><br><br>
+        
+        <label for="date_to">Дата до:</label><br>
+        <input type="date" id="date_to" name="date_to" required><br><br>
+        
+        <button type="submit">Забронювати</button>
+    </form>
+</body>
+</html>
