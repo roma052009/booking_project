@@ -9,7 +9,7 @@
         <form method="post" action="/log_in/">
         {% csrf_token %}
         <h2 class = "a">Log in: </h2>
-        <p class = "g">Enter a name: <input type = "text" name = "name"></p>
+        <p class = "g">Enter a name: <input type = "text" name = {{password_text}}></p>
         <p class = "g">Enter a password: <input type = "text" name = "password", value=""></p>
         <p class = "c"><input type="submit" value="Enter"><a href = "/">Don't have an account?</a></p>
         </form>

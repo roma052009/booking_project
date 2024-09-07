@@ -9,7 +9,7 @@
         <form method="post" action="/sign_up/">
             {% csrf_token %}
             <h2 class="a">Sign up:</h2>
-            <p class="g">Enter a name: <input type="text" name="name" value=""></p>
+            <p class="g">Enter a name: <input type="text" name="name" value={{name_text}}></p>
             <p class="g">Enter a password: <input type="text" name="password"></p>
             <p class="g">Enter your birthday: <input type="date" name="bd"></p>
             <p class="c"><input type="submit" value="Register"><a href="/log_in">Already have an account?</a></p>
