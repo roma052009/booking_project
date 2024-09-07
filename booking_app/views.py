@@ -3,15 +3,23 @@ from booking_app.models import User, Place, Reservation
 from django.shortcuts import redirect
 
 def log_in(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        password = request.POST.get('password')
+        user = User.objects.get(name=name)
+
+        if password == user.password:
+            request.session['user_id'] = user.id
+            return redirect('places_list')
     return render(request, 'log_in.html')
 
 def sign_up(request):
     if request.method == 'POST':
-        username = request.POST.get('name')
+        name = request.POST.get('name')
         password = request.POST.get('password')
-        # dob = request.POST.get('dob')
-        
-        user = User.objects.create(username=username, password=password)#, dob=dob
+        birthday = request.POST.get('bd')
+
+        user = User.objects.create(name=name, password=password, birthday=birthday)
         return redirect('places_list')
     
     return render(request, 'sign_up.html')
