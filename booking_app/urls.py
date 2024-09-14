@@ -7,6 +7,6 @@ urlpatterns = [
     path('log_in/', views.log_in, name='login'),
     path('sign_up/', views.sign_up, name='signup'),
     path('places/', views.places_list, name='places_list'),
-    path('booking/', views.booking, name='booking'),
+    path('booking/<int:place_id>/', views.booking, name='booking'),
     path('', lambda request: redirect('signup')),
 ]

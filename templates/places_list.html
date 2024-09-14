@@ -1,18 +1,22 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Список місць</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'booking_app/style.css' %}">
 </head>
 <body>
-    <h2>Список місць</h2>
-    <ul>
+    <h2 class="registring">Список місць</h2>
+    <ul class="places_list">
         {% for place in places %}
-            <li>
-                <h3>{{ place.name }}</h3>
-                <p>{{ place.description }}</p>
-                <p>Місткість: {{ place.capacity }}</p>
-            </li>
+            <a href="{% url 'booking' place.id %}" class="place_card">
+                <div class="place_frame">
+                    <h3>{{ place.name }}</h3>
+                    <p>{{ place.description }}</p>
+                    <p>Місткість: {{ place.capacity }}</p>
+                </div>
+            </a>
         {% endfor %}
     </ul>
 </body>
